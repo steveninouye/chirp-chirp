@@ -17,6 +17,15 @@ var counter = {
 
 function countLetters(counter, sample_text){
   // FIX ME
+  if(sample_text.length === 0){
+    return counter;
+  }
+  let arr = sample_text.split('');
+  let letter = arr.pop();
+  if(counter[letter] === 0 || counter[letter]){
+    counter[letter]++;
+  }
+  return countLetters(counter, arr.join(''));
 }
 
 $(document).ready(function(){
